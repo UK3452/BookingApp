@@ -35,7 +35,7 @@ const Hotel = () => {
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
 
   function dayDifference(date1, date2) {
-    const timeDiff = Math.abs(date1.getTime() - date2.getTime());
+    const timeDiff = Math.abs(date1?.getTime() - date2?.getTime());
     const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
     return diffDays;
   }
@@ -123,7 +123,9 @@ const Hotel = () => {
             </div>
           )}
           <div className="hotelWrapper">
-            <button onClick={handleClick} className="bookNow">Reserve or Book Now!</button>
+            <button onClick={handleClick} className="bookNow">
+              Reserve or Book Now!
+            </button>
             <h1 className="hotelTitle">{data.name}</h1>
             <div className="hotelAddress">
               <FontAwesomeIcon icon={faLocationDot} />
