@@ -1,3 +1,4 @@
+const default_img = "https://i.ibb.co/MBtjqXQ/no-avatar.gif";
 export const userColumns = [
   { field: "id", headerName: "ID", width: 70 },
   {
@@ -7,7 +8,11 @@ export const userColumns = [
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
-          <img className="cellImg" src={params.row.img} alt="avatar" />
+          <img
+            className="cellImg"
+            src={params.row.img || default_img}
+            alt="avatar"
+          />
           {params.row.username}
         </div>
       );
@@ -20,8 +25,18 @@ export const userColumns = [
   },
 
   {
-    field: "age",
-    headerName: "Age",
+    field: "country",
+    headerName: "Country",
+    width: 100,
+  },
+  {
+    field: "city",
+    headerName: "City",
+    width: 100,
+  },
+  {
+    field: "phone",
+    headerName: "Phone",
     width: 100,
   },
   {
@@ -38,7 +53,7 @@ export const userColumns = [
   },
 ];
 
-//temporary data
+//Temporary data
 export const userRows = [
   {
     id: 1,
