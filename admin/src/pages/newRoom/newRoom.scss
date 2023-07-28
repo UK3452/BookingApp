@@ -30,6 +30,10 @@
         }
       }
 
+      .selectHotel {
+        width: 100%;
+      }
+
       .right {
         flex: 2;
 
@@ -37,7 +41,8 @@
           display: flex;
           flex-wrap: wrap;
           gap: 30px;
-          justify-content: space-around;
+          justify-content: space-between;
+          padding: 0 20px;
 
           .formInput {
             width: 40%;
@@ -58,6 +63,11 @@
               border: none;
               border-bottom: 1px solid gray;
             }
+
+            textarea {
+              width: 100%;
+            }
+
           }
 
           button {
