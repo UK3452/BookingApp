@@ -4,7 +4,7 @@ export const userColumns = [
   {
     field: "user",
     headerName: "User",
-    width: 230,
+    width: 200,
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
@@ -21,28 +21,28 @@ export const userColumns = [
   {
     field: "email",
     headerName: "Email",
-    width: 230,
+    width: 180,
   },
 
   {
     field: "country",
     headerName: "Country",
-    width: 100,
+    width: 80,
   },
   {
     field: "city",
     headerName: "City",
-    width: 100,
+    width: 80,
   },
   {
     field: "phone",
     headerName: "Phone",
-    width: 100,
+    width: 150,
   },
   {
     field: "status",
     headerName: "Status",
-    width: 160,
+    width: 100,
     renderCell: (params) => {
       return (
         <div className={`cellWithStatus ${params.row.status}`}>

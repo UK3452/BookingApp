@@ -8,9 +8,21 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { Navigate, useNavigate } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { dispatch } = useContext(DarkModeContext);
+
+  const { user } = useContext(AuthContext);
+  const { data, loading, error } = useFetch(`/users/${user?._id}`);
+  const path = `${user?._id}`;
+
+  const clickHandle = () => {
+    navigate(path);
+  };
 
   return (
     <div className="navbar">
@@ -44,12 +56,8 @@ const Navbar = () => {
           <div className="item">
             <ListOutlinedIcon className="icon" />
           </div>
-          <div className="item">
-            <img
-              src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-              className="avatar"
-            />
+          <div className="item" onClick={clickHandle}>
+            <img src={data?.img} alt="" className="avatar" />
           </div>
         </div>
       </div>
